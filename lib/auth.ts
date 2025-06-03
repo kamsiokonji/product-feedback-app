@@ -30,17 +30,8 @@ export const auth = betterAuth({
     },
   },
   session: {
-    maxAge: 30 * 24 * 60 * 60,
-    updateAge: 24 * 60 * 60,
+    expiresIn: 30 * 24 * 60 * 60, // 30 days
   },
-  security: {
-    rateLimit: {
-      maxAttempts: 5,
-      windowMs: 15 * 60 * 1000,
-    },
-    csrf: {
-      enabled: true,
-    },
-  },
+
   plugins: [nextCookies()],
 });

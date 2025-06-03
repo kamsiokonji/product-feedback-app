@@ -1,6 +1,7 @@
 "use server";
 
 import { auth } from "@/lib/auth";
+import prisma from "@/lib/prisma";
 import { loginSchema, registerSchema } from "@/lib/validations";
 import { APIError } from "better-auth/api";
 
@@ -117,4 +118,14 @@ export async function login(
     }
     return { errors: { email: ["Something went wrong"] } };
   }
+}
+
+export async function searchAccount(email: string) {
+  const account = await prisma.user.findUnique({
+    where: {
+      email,
+    },
+  });
+
+  return account;
 }

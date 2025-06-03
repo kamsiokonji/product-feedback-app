@@ -1,9 +1,5 @@
-import { Icons } from "@/components/ui/icons";
+import { LoginForm } from "@/components/auth-form/login-form";
 
-export default function Page() {
-  return (
-    <div>
-      <Icons.google />
-    </div>
-  );
+export default function Login() {
+  return <LoginForm />;
 }

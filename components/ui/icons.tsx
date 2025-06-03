@@ -1,4 +1,4 @@
-import { LucideProps, User } from "lucide-react";
+import { Eye, EyeOff, LucideProps, MessageSquare, User } from "lucide-react";
 
 export const Icons = {
   user: User,
@@ -22,4 +22,7 @@ export const Icons = {
       />
     </svg>
   ),
+  message: MessageSquare,
+  eye: Eye,
+  eyeOff: EyeOff,
 };
